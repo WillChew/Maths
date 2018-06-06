@@ -14,17 +14,13 @@
     if (self = [super init]) {
         
         _startTime = [NSDate date];
-        
-        int random1 = arc4random_uniform(91)+10;
-        int random2 = arc4random_uniform(91)+10;
-        
-        NSString *number1 = [@(random1) stringValue];
-        NSString *number2 = [@(random2) stringValue];
-        
-        NSString *question2 = [NSString stringWithFormat:@"%@ + %@ ?", number1, number2];
+        _leftValue = arc4random_uniform(91)+10;
+        _rightValue = arc4random_uniform(91)+10;
+
+        NSString *question2 = [NSString stringWithFormat:@"%ld + %ld ?", self.leftValue, self.rightValue];
         _question = question2 ;
 
-        int answer = random1 + random2;
+        NSInteger answer = self.leftValue + self.rightValue;
         _answer = answer;
         
         _leftValue = arc4random_uniform(91)+10;

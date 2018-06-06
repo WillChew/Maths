@@ -19,7 +19,7 @@
 
 - (void)generateQuestion {
 
-    NSString *question2 = [NSString stringWithFormat:@"%ld - %ld?", self.leftValue, self.rightValue];
+    NSString *question2 = [NSString stringWithFormat:@"%ld - %ld?", self.rightValue, self.leftValue];
     self.question = question2 ;
     
     NSInteger answer = self.leftValue - self.rightValue;

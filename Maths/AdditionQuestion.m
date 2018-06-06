@@ -10,12 +10,15 @@
 
 @implementation AdditionQuestion
 
+- (instancetype)init {
+    if (self = [super init]) {
+        [self generateQuestion];
+    }
+    return self;
+}
+
 -(void)generateQuestion {
-    
-    NSString *number1 = [@(self.leftValue) stringValue];
-    NSString *number2 = [@(self.rightValue) stringValue];
-    
-    NSString *question2 = [NSString stringWithFormat:@"%@ + %@?", number1, number2];
+    NSString *question2 = [NSString stringWithFormat:@"%ld + %ld?", self.rightValue, self.leftValue];
     self.question = question2 ;
     
     NSInteger answer = self.leftValue + self.rightValue;
