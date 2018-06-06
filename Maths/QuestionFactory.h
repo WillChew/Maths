@@ -1,5 +1,5 @@
 //
-//  QuestionManager.h
+//  QuestionFactory.h
 //  Maths
 //
 //  Created by Will Chew on 2018-06-06.
@@ -9,11 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "Question.h"
 
-@interface QuestionManager : NSObject
+@interface QuestionFactory : NSObject
 
-@property NSMutableArray *questions;
+@property NSArray *questionSubclassNames;
 
-
-- (NSString*)timeOutput;
+- (Question*) generateRandomQuestion;
 
 @end

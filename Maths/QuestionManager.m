@@ -7,12 +7,10 @@
 //
 
 #import "QuestionManager.h"
-#import "AdditionQuestion.h"
+
 
 
 @implementation QuestionManager
-
-
 
 - (instancetype)init
 {
@@ -27,7 +25,7 @@
     NSInteger totalTimeToAnswer = 0;
     NSInteger count = 0;
 
-    for (AdditionQuestion *question in self.questions) {
+    for (Question *question in self.questions) {
         totalTimeToAnswer += question.answerTime ;
         count++;
         

@@ -7,30 +7,30 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AdditionQuestion.h"
+#import "Question.h"
 #import "InputHandler.h"
 #import "ScoreKeeper.h"
 #import "QuestionManager.h"
+#import "QuestionFactory.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
         BOOL gameOn = YES;
-        
+        NSLog(@"MATHS!\n\n\n");
         InputHandler *input = [[InputHandler alloc]init];
         ScoreKeeper *score = [[ScoreKeeper alloc]init];
         QuestionManager *manageQuestions = [[QuestionManager alloc]init];
+        QuestionFactory *askQuestions = [[QuestionFactory alloc]init];
 
         
         while ((gameOn = YES)) {
-            
-            AdditionQuestion *addQuestion = [[AdditionQuestion alloc]init];
-            
-            [manageQuestions.questions addObject:addQuestion];
+           Question *addQuestion = [askQuestions generateRandomQuestion];
 
+            [manageQuestions.questions addObject:addQuestion];
             NSLog(@"%@", [addQuestion question]);
             
-            NSLog(@"Input a number: ");
+            NSLog(@"Input a number:");
             
             NSString *userAnswer = [input handleInput];
             
